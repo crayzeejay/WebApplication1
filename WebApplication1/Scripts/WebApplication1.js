@@ -2,10 +2,12 @@
 
 WebApplication1.controller('LandingPageController', LandingPageController);
 WebApplication1.controller('LoginController', LoginController);
+WebApplication1.controller('OneController', OneController);
 WebApplication1.controller('RegisterController', RegisterController);
 
 WebApplication1.factory('AuthHttpResponseInterceptor', AuthHttpResponseInterceptor);
 WebApplication1.factory('LoginFactory', LoginFactory);
+WebApplication1.factory('OneFactory', OneFactory);
 WebApplication1.factory('RegistrationFactory', RegistrationFactory);
 
 var configFunction = function ($stateProvider, $httpProvider, $locationProvider) {
@@ -17,7 +19,8 @@ var configFunction = function ($stateProvider, $httpProvider, $locationProvider)
             url: '/stateOne?donuts',
             views: {
                 "containerOne": {
-                    templateUrl: '/routesDemo/one'
+                    templateUrl: '/routesDemo/one',
+                    controller: OneController
                 },
                 "containerTwo": {
                     templateUrl: function (params) { return '/routesDemo/two?donuts=' + params.donuts; }
@@ -31,7 +34,8 @@ var configFunction = function ($stateProvider, $httpProvider, $locationProvider)
             url: '/stateTwo',
             views: {
                 "containerOne": {
-                    templateUrl: '/routesDemo/one'
+                    templateUrl: '/routesDemo/one',
+                    controller: OneController
                 },
                 "containerTwo": {
                     templateUrl: '/routesDemo/three'

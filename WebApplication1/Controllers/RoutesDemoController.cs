@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -20,8 +21,12 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Three()
         {
+            Models.DB1Entities1 e = new DB1Entities1();
+            var result = e.Movies.ToList();
+            ViewBag.Movies = result;
             return View();
         }
 

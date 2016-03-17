@@ -1,2 +1,6 @@
-﻿
-three
+﻿@using WebApplication1.Models
+three<br/>
+@foreach(Movy movie in ViewBag.Movies)
+{
+    <text>@movie.Name<br/></text>
+}

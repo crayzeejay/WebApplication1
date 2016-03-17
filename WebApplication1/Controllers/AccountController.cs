@@ -72,5 +72,13 @@ namespace WebApplication1.Controllers
             await SignInManager.SignInAsync(user, false, false);
             return true;
         }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<bool> Upload(object file)
+        {
+            if (file == null) return false;
+            return true;
+        }
     }
 }
